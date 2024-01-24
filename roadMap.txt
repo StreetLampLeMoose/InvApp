@@ -1,0 +1,63 @@
+This is the road map for an app that is a small invoice processing app
+
+This app 
+-allows users to put in an invoice
+    -put in due date
+    -put in price
+    -put in title
+    -put in description of services provided
+-allows users to process the invoice
+    -request additional information
+    -approve for payment
+    -reject
+-has has a summary of all input invoices
+
+
+a use case:
+-User A puts in an invoice
+    -puts in price 
+        -title
+        -due date
+        -diescription
+    -puts in user B as the invoice owner
+-User B receives the invoice   
+    -reviews invoice 
+    -requests additional information
+-User A receives the information request
+    -User A puts in additional information
+-User B receives the invoice
+    -User B approves for payment
+-User A receives the notification that the invoice has been paid
+
+some views: 
+-user based invoice summary
+    -Shows a list of all invoices that are associated with the user 
+    signed in
+-invoice detail 
+    -Shows a detailed view of the invoice 
+        -has everything that is needed for invoice processing
+        -allows users to change things and do stuff 
+        necessary for processing
+-invoice entry
+    -blank version of the detail screen
+    -makes a new invoice when saved
+
+-fields for invoice detail screen
+    -title
+    -price
+    -description
+    -invoice requestor
+    -invoice owner
+    -status: new, in process, rejected, approved
+        -new: no action taken
+        -in process: additional information requrested
+        -rejected: rejected by invoice owner
+        -approved: approved by invoice owner
+
+fields for invoice summary
+    -title
+    -price
+    -requestor
+    -owner
+
+
