@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('password').value;
 
         try{
-            const response = await fetch ('/middleWare/authMiddleWare.js', 
+            const response = await fetch ('/routes/signInRoute', 
             {
                 method:'POST',
                 headers :{
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             )
         }catch (err){
-            console.error('Error during sign in:' err);
+            console.error('Error during sign in:', err);
         }
     })
 })
