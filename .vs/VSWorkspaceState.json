@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\config",
+    "\\middleWare",
+    "\\models",
+    "\\routes",
+    "\\views"
   ],
+  "SelectedNode": "\\InvApp.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,3 @@
+C:\Users\jwosw\source\repos\StreetLampLeMoose\InvApp\obj\Debug\InvApp.njsproj.AssemblyReference.cache
+C:\Users\jwosw\source\repos\StreetLampLeMoose\InvApp\obj\Debug\InvApp.njsproj.CoreCompileInputs.cache
+C:\Users\jwosw\source\repos\StreetLampLeMoose\InvApp\bin\Microsoft.NodejsTools.WebRole.dll
