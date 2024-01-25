@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose')
 const { stringify } = require('querystring')
 
-const invoiceSchema = new mongoose.schema({
+const invoice = new mongoose.schema({
     invoiceTitle :{
         type:string ,
         required: true

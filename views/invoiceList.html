@@ -17,15 +17,15 @@
 
 
 <script>
-    fetch('/invoices')
+    fetch('/'/*this is a place holder route*/)
         .then(response => response.json)
         .then(invoices => {  //might have to do some extra parsing of invoces here
-            const tablebody =document.getElementById('invoiceTableBody');
+            const tableBody =document.getElementById('invoiceTableBody');
             
-            tasks.forEach(invoice => {
+            invoices.forEach(invoice => {
                 const row = document.createElement('tr');
                 row.onClick = handleRowClick(invoice._id,invoice.title);
-                row.innerHTML = '<td>${invoices.InvoiceTitle}</td>' //put the rest in here
+                row.innerHTML = '<td>${invoices.InvoiceTitle}</td>' //put the rest in here todo
                 tableBody.appendChild(row);
             });
         })

@@ -1,15 +1,29 @@
 <body>
     <header>
-        <h1 id = "main header">
-            Invoice 
+        <h1 id="main header">
+            Invoice Detail Page
         </h1>
-
+        <h2>
+            <label for="Invoice">Invoice Number</label>
+            <input type="text" id="invoiceId" />
+            <button id="findInvoiceButton">Find Invoice</button>
+        </h2>
     </header>
-
-    <script> 
-        //need script that fills out the rest dynamically
-        //based on the invoice _id
-        //people will enter from the invoiceList and the landing page
-    </script>
+    <table id="singleInvoiceTable">
+    <thead>
+        <tr>
+            <th>Invoice Title</th>
+            <th>Price</th>
+            <th>Invoice Owner</th>
+            <th>Invoice Requestor</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+</table>
+    <textarea id="invoiceDescription" >
+    
+    </textarea>
+    
+    <script src= findInvoice.js></script>
 </body>
 
