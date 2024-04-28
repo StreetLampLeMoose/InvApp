@@ -1,43 +1,40 @@
 const mongoose = require ('mongoose')
 const { stringify } = require('querystring')
-
-const invoice = new mongoose.schema({
-    invoiceTitle :{
-        type:string ,
+//have to fix all these strings and export it TODO
+const uri = "mongodb+srv://testUser2:2R1f1r8QuBbJcYqO@cluster0.ehflqbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const invoiceSchema = new mongoose.Schema({
+    invoiceTitle: {
+        type: String,
         required: true
     },
     price: {
-        type : number,
+        type: Number,
         required: true
     },
     description: {
-        type: string,
+        type: String,
         required: true
     },
     invoiceRequestor: {
-        type:string,
+        type: String,
         required: true
     },
-    invoiceOwner :{
-        type:string,
-        required:true
-    },
-    status:{
-        type:string,
-        required:true
-    }
-})
-const userSchema = new mongoose.schema({
-    name:{
-        type:string,
+    invoiceOwner: {
+        type: String,
         required: true
     },
-    company:{
-        type:string
-    },
-    role: {
-        type:string,
-        required:true
-    }
+    status: {
+        type: String,
 
-})
+    }
+});
+
+async function run() {
+    await mongoose.connect(uri);
+    mongoose.model('Invoice', invoice);
+
+    await mongoose.model('Invoice').findOne();
+}
+
+const Invoice = mongoose.model('Invoice', invoiceSchema );
+module.exports = Invoice;

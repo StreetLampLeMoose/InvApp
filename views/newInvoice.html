@@ -1,0 +1,31 @@
+<html>
+<body>
+    <h1>
+        Fill Out the following form to submit a new Invoice. 
+    </h1>
+    <form id="newInvoiceForm">
+        <label for="invoiceTitle">Invoice Title:</label>
+        <input type = "text" id="invoiceTitle" required/>
+
+        <label for="price"> Price</label>
+        <input for="price" id ="price" required/>
+
+        <label for="invoiceOwner" >Invoice Owner</label>
+        <input for="invoiceOwner" id="invoiceOwner"/>
+
+        <label for="invoiceRequestor" >Invoice Requestor</label>
+        <input for="invoiceRequestor" id="invoiceRequestor" required />
+
+        <label for="invoiceDescription" >Invoice Description</label>
+        <textarea for="invoiceDescription" id="invoiceDescription" rows="4" cols="50">
+            
+        </textarea>
+
+        <input type="submit" value="Submit Invoice" />
+
+    </form>
+    <p id="invoiceCreatedMessage"></p>
+    <script type="text/javascript" src="/views/newInvoice.js"></script>
+</body>
+
+</html>

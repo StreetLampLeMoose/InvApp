@@ -1,25 +1,33 @@
+const express = require('express')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
+const app = express();
+const signInRoute = express.Router();
+const mongoose = require("mongoose");
+const User = require("../models/users")
+const uri = "mongodb+srv://testUser2:2R1f1r8QuBbJcYqO@cluster0.ehflqbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
-const generateToken = (userName) => {
-    return jwt.sign({ userName }, 'secret', { expiresIn: '1h' });
-}
-
-app.post('/signIn', (req, res) => {
+signInRoute.post('/signIn', async function (req, res) {
+    console.log("in sign in handler");
     try {
-        const { userName, password } = req.body;
-
-        const user = await User.findOne({ userName });
-
-        if (user && await bcrypt.compare(password, user.password)) {
+        const { username, password } = req.body;
+        const generateToken = (username) => {
+            return jwt.sign({ username }, 'secret', { expiresIn: '1h' })
+        };
+        await mongoose.connect(uri);
+        const user = await User.findOne({userName: username });
+        if (user && password == user.password) {
             const token = generateToken(user._id);
             res.header('Authorization', 'Bearer ${token}');
-            res.status(200).json(message: "user signed in");
+            res.status(200).json(message, "user signed in");
         } else {
-            res.status(401).json(error: "User failed to sign in")
+            console.log("in else")
+            res.status(401).json( "User failed to sign in")
         }
     } catch (err) {
-        console.error(error);
-        res.status(500).json(error:"some other error has occurred")
+        console.log("in catch")
+        console.log(err);
+        res.status(500).json("some other error has occurred")
     }
-})
+    })
+module.exports = signInRoute;

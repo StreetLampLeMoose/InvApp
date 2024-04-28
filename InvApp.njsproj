@@ -1,97 +1,103 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <SchemaVersion>2.0</SchemaVersion>
-        <ProjectGuid>{755268fa-2317-4f61-8b90-9b4988a9ee6a}</ProjectGuid>
-        <ProjectHome>.</ProjectHome>
-        <ProjectView>ShowAllFiles</ProjectView>
-        <StartupFile>app.js</StartupFile>
-        <WorkingDirectory>.</WorkingDirectory>
-        <OutputPath>.</OutputPath>
-        <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
-        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
-        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    </PropertyGroup>
-    <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
-    <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
-    <ItemGroup>
-        <Content Include="roadMap.txt" />
-        <Content Include="package.json" />
-        <Content Include="app.js" />
-        <Content Include="routes.js" />
-        <Content Include="config\config.js" />
-        <Content Include="config\credentials.js" />
-        <Content Include="config\db.js" />
-        <Content Include="middleWare\authMiddleware.js" />
-        <Content Include="middleWare\otherMiddleware.js" />
-        <Content Include="models\invoice.js" />
-        <Content Include="models\users.js" />
-        <Content Include="routes\changeInvoiceRoute.js" />
-        <Content Include="routes\findOneInvoice.js" />
-        <Content Include="routes\newInvoiceRoute.js" />
-        <Content Include="routes\registrationRoute.js" />
-        <Content Include="routes\signInRoute.js" />
-        <Content Include="views\index.html" />
-        <Content Include="views\invoiceDetail.html" />
-        <Content Include="views\invoiceList.html" />
-        <Content Include="views\newInvoice.html" />
-        <Content Include="views\signIn.html" />
-        <Content Include="views\findInvoice.js" />
-        <Content Include="views\register.js" />
-        <Content Include="views\signIn.js" />
-    </ItemGroup>
-    <ItemGroup>
-        <Folder Include="config" />
-        <Folder Include="Debug" />
-        <Folder Include="Debug\InvApp.tlog" />
-        <Folder Include="InvApp" />
-        <Folder Include="middleWare" />
-        <Folder Include="models" />
-        <Folder Include="routes" />
-        <Folder Include="views" />
-        <Folder Include="x64" />
-        <Folder Include="x64\Debug" />
-        <Folder Include="x64\Debug\InvApp.tlog" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
-    <ProjectExtensions>
-        <VisualStudio>
-          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-            <WebProjectProperties>
-              <UseIIS>False</UseIIS>
-              <AutoAssignPort>True</AutoAssignPort>
-              <DevelopmentServerPort>0</DevelopmentServerPort>
-              <DevelopmentServerVPath>/</DevelopmentServerVPath>
-              <IISUrl>http://localhost:48022/</IISUrl>
-              <NTLMAuthentication>False</NTLMAuthentication>
-              <UseCustomServer>True</UseCustomServer>
-              <CustomServerUrl>http://localhost:1337</CustomServerUrl>
-              <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-            </WebProjectProperties>
-          </FlavorProperties>
-          <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
-            <WebProjectProperties>
-              <StartPageUrl>
-              </StartPageUrl>
-              <StartAction>CurrentPage</StartAction>
-              <AspNetDebugging>True</AspNetDebugging>
-              <SilverlightDebugging>False</SilverlightDebugging>
-              <NativeDebugging>False</NativeDebugging>
-              <SQLDebugging>False</SQLDebugging>
-              <ExternalProgram>
-              </ExternalProgram>
-              <StartExternalURL>
-              </StartExternalURL>
-              <StartCmdLineArguments>
-              </StartCmdLineArguments>
-              <StartWorkingDirectory>
-              </StartWorkingDirectory>
-              <EnableENC>False</EnableENC>
-              <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
-            </WebProjectProperties>
-          </FlavorProperties>
-        </VisualStudio>
-    </ProjectExtensions>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{755268fa-2317-4f61-8b90-9b4988a9ee6a}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>app.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>False</StartWebBrowser>
+    <Environment>
+    </Environment>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="roadMap.txt" />
+    <Content Include="package.json" />
+    <Content Include="app.js" />
+    <Content Include="config\config.js" />
+    <Content Include="config\credentials.js" />
+    <Content Include="config\db.js" />
+    <Content Include="middleWare\authMiddleware.js" />
+    <Content Include="middleWare\otherMiddleware.js" />
+    <Content Include="models\invoice.js" />
+    <Content Include="models\users.js" />
+    <Content Include="routes\changeInvoiceRoute.js" />
+    <Content Include="routes\findOneInvoice.js" />
+    <Content Include="routes\newInvoiceRoute.js" />
+    <Content Include="routes\registrationRoute.js" />
+    <Content Include="routes\signInRoute.js" />
+    <Content Include="views\index.html" />
+    <Content Include="views\invoiceDetail.html" />
+    <Content Include="views\invoiceList.html" />
+    <Content Include="views\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\newInvoice.html" />
+    <Content Include="views\signIn.html" />
+    <Content Include="views\findInvoice.js" />
+    <Content Include="views\register.js" />
+    <Content Include="views\signIn.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config" />
+    <Folder Include="Debug" />
+    <Folder Include="Debug\InvApp.tlog" />
+    <Folder Include="InvApp" />
+    <Folder Include="middleWare" />
+    <Folder Include="models" />
+    <Folder Include="routes" />
+    <Folder Include="views" />
+    <Folder Include="x64" />
+    <Folder Include="x64\Debug" />
+    <Folder Include="x64\Debug\InvApp.tlog" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

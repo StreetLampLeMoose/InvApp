@@ -1,24 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const registerForm = document.getElementById('signInForm');
+    console.log("client side content loaded")
+    const signInButton = document.getElementById('signInButton');
     
-    registerForm.addEventListener("signInButton" , async(event) => {
-        event.preventDefault();
-
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        try{
-            const response = await fetch ('/routes/signInRoute', 
-            {
-                method:'POST',
-                headers :{
-                    'content-type' :'application/json',
-                },
-                body: JSON.stringify({username,password})
-            }
+    signInButton.addEventListener('click', async () => {
+        console.log("sign in button clicked")
+        const username = document.getElementById('signInUsername').value;
+        const password = document.getElementById('signInpassword').value;
+        try {
+            const response = await fetch('/signIn',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username: username, password: password })   
+                }
             )
-        }catch (err){
+        } catch (err) {
             console.error('Error during sign in:', err);
+            document.getElementById("signInErrorMessage").innerHTML = "Error: User Not Found"
         }
+
     })
+   
 })
+

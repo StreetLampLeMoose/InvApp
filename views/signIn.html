@@ -1,40 +1,38 @@
+
+<html>
 <body>
     <header>
         <h1>
             Sign In
         </h1>
-        <h2>
-            Please sign in here: 
-            <form id = "signInForm">
-                <label for = "username"> Username:</label>
-                <input type = "text" id = "username" name="'username" required>
+        Please sign in here:
+        <form id="signInForm">
+            <label for="username"> Username:</label>
+            <input type="text" id="signInUsername"  required>
 
-                <label for = "password">Password:</label>
-                <input type = "password" id = "password" name = "password" required>
-                <button id = "signInButton">Sign In</button>
-            </form>
-        </h2>
-    <h3>
-        Register
-    </h3>
-    <h4>
-        Please register here: 
-        <form id = "registrationForm">
-            <label for = "username"> Username:</label>
-                <input type = "text" id = "username" name="'username" required>
-
-                <label for = "password">Password:</label>
-                <input type = "password" id = "password" name = "password" required>
-
-                <label for = "company">Company:</label>
-                <input type "text" id = "company">
-                <button id = "registrationButton">Register</button>
+            <label for="password">Password:</label>
+            <input type="password" id="signInpassword" required>
+            <button id="signInButton">Sign In</button>
+            <p id="signInErrorMessage"></p>
         </form>
-    </h4>
-       
-    </header>
+        <h3>
+            Register
+        </h3>
 
-    <script src = signin.js ></script> <!--script for signing in-->
-    <script src = register.js ></script> <!--script for registering-->
-        
+        Please register here:
+        <form id="registrationForm">
+            <label for="username"> Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <label for="company">Company:</label>
+            <input type="text" id="company">
+            <button id="registrationButton">Register</button>
+        </form>
+    </header>
+    <script type="text/javascript" src="/views/signIn.js"></script> <!--script for signing in-->
+    <script type="text/javascript" src="/views/register.js"></script> <!--script for registering-->
 </body>
+</html>
