@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded',() => {
         let invoiceOwner = document.getElementById('invoiceOwner').value;
         let invoiceRequestor = document.getElementById('invoiceRequestor').value;
         let invoiceDescription = document.getElementById('invoiceDescription').value;
-        console.log("just before call")
         try{
             var res = await fetch('/newInvoice',
                 {
@@ -16,16 +15,25 @@ document.addEventListener('DOMContentLoaded',() => {
                     headers: {
                         'content-type': 'application/json',
                     },
-                    body: JSON.stringify({ message: "sending to server" }) 
+                    body: JSON.stringify({
+                        invoiceTitle: invoiceTitle ,
+                        price: price,
+                        invoiceOwner: invoiceOwner,
+                        invoiceRequestor: invoiceRequestor,
+                        invoiceDescription: invoiceDescription
+
+                    }) 
                 })
-            console.log(res);
-            console.log(res.body.message);
+            
             if (res.ok) {
-                document.getElementById("invoiceCreatedMessage").innerHTML = "Invoice Successfully created"
+                let data = await res.json()
+                document.getElementById("invoiceCreatedMessage").innerHTML = "Invoice Successfully created";
+                document.getElementById("invoiceId").innerHTML = "Invoice Id: " + data.invoiceId;
             }
         }catch(err) {
             console.log("there was an error: ", err);
         }
-
+        
     })
+        
 })
