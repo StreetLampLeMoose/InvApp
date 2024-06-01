@@ -31,17 +31,22 @@
     <Content Include="models\invoice.js" />
     <Content Include="models\users.js" />
     <Content Include="routes\changeInvoiceRoute.js" />
-    <Content Include="routes\findOneInvoice.js" />
     <Content Include="routes\newInvoiceRoute.js" />
     <Content Include="routes\registrationRoute.js" />
+    <Content Include="routes\searchInvoicesRoute.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="routes\signInRoute.js" />
     <Content Include="views\index.html" />
     <Content Include="views\invoiceDetail.html" />
-    <Content Include="views\invoiceList.html" />
+    <Content Include="views\searchInvoices.html" />
     <Content Include="views\index.js">
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\newInvoice.html" />
+    <Content Include="views\searchInvoices.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\signIn.html" />
     <Content Include="views\findInvoice.js" />
     <Content Include="views\register.js" />

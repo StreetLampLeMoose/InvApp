@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const signInRoute = require('./routes/signInRoute');
 const registrationRoute = require('./routes/registrationRoute');
 const newInvoiceRoute = require("./routes/newInvoiceRoute");
+const searchInvoicesRoute = require("./routes/searchInvoicesRoute");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = "mongodb+srv://testUser2:2R1f1r8QuBbJcYqO@cluster0.ehflqbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -61,7 +62,7 @@ app.get('/views/index', (req, res) => {
 
 app.get('/views/signin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'signin.html'));
-});
+});                         
 
 app.get('/views/signIn.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'signIn.js'));
@@ -83,9 +84,18 @@ app.get('/views/newInvoice.js', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'newInvoice.js'));
 });
 
+app.get('/views/searchInvoices', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'searchInvoices.html'));
+});
+
+app.get('/views/searchInvoices.js', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'searchInvoices.js'));
+});                  
+
 app.use(signInRoute);
 app.use(registrationRoute);
 app.use(newInvoiceRoute);
+app.use(searchInvoicesRoute);
 
 
 app.listen(port, () => {

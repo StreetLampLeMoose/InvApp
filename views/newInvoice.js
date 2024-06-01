@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded',() => {
         let invoiceOwner = document.getElementById('invoiceOwner').value;
         let invoiceRequestor = document.getElementById('invoiceRequestor').value;
         let invoiceDescription = document.getElementById('invoiceDescription').value;
+        newInvoiceForm.reset();
         try{
             var res = await fetch('/newInvoice',
                 {
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded',() => {
                 document.getElementById("invoiceId").innerHTML = "Invoice Id: " + data.invoiceId;
             }
         }catch(err) {
-            console.log("there was an error: ", err);
+            document.getElementById("invoiceCreatedMessage").innerHTML = "Invoice not created. Error: " + err;
         }
         
     })

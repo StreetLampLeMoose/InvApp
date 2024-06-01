@@ -1,0 +1,42 @@
+<html>
+<body>
+
+    <h1>Invoice Search</h1>
+    <p>Fill out the below form search for invoices</p>
+
+    <form id="searchInvoicesForm">
+
+        <label for="invoiceId">Invoice Id:</label>
+        <input type= "text" id="invoiceId"/>
+
+        <label for="invoiceTitle">Invoice Title:</label>
+        <input type="text" id="invoiceTitle"  />
+
+        <label for="invoiceOwner">Invoice Owner</label>
+        <input for="invoiceOwner" id="invoiceOwner" />
+
+        <label for="invoiceRequestor">Invoice Requestor</label>
+        <input for="invoiceRequestor" id="invoiceRequestor"  />
+
+        <input type="submit" value="Search Invoices" />
+    </form>
+
+        <h1>Invoice Table</h1>
+
+        <table border="1" id="invoiceTable">
+            <thead>
+                <tr>
+                    <th>Invoice Id</th>
+                    <th>Invoice Title</th>
+                    <th>Price</th>
+                    <th>Invoice Owner</th>
+                    <th>Invoice Requestor</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceTableBody">
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+    <script type="text/javascript" src="/views/searchInvoices.js"></script>
+</body>
+</html>
