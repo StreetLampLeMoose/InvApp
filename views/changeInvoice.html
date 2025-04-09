@@ -1,0 +1,50 @@
+<html>
+<head>
+    This is the change invoice page. Please use it to change invoices as necessary.
+</head>
+<p>
+    <form id="searchInvoicesForm">
+        <label for="invoiceId">Invoice Id:</label>
+        <input type= "text" id="invoiceId"/>
+    </form>
+</p>
+<h1>Invoice Table</h1>
+        <table border="1" id="invoiceTable">
+            <thead>
+                <tr>
+                    <th>Invoice Id</th>
+                    <th>Invoice Title</th>
+                    <th>Price</th>
+                    <th>Invoice Owner</th>
+                    <th>Invoice Requestor</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceTableBody">
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+    <h2>Please input changes to the invoice below</h2>
+        <form id="searchInvoicesForm">
+    
+            <label for="invoiceTitle">Invoice Title:</label>
+            <input type="text" id="invoiceTitle"  />
+    
+            <label for="invoiceOwner">Invoice Owner</label>
+            <input for="invoiceOwner" id="invoiceOwner" />
+    
+            <label for="invoiceRequestor">Invoice Requestor</label>
+            <input for="invoiceRequestor" id="invoiceRequestor"  />
+
+            <label for="invoicePrice">Invoice Price</label>
+            <input for="invoicePrice" id="invoicePrice"  />
+
+            <label for="invoiceDescription">Invoice Date</label>
+            <input for="invoiceDescription" id="invoiceDescription"  />
+
+            <label for="invoiceStatus">Invoice Status</label>
+            <input for="invoiceStatus" id="invoiceStatus"  />
+    
+            <input type="submit" value="Submit Changes" />
+        </form>
+        <script type="text/javascript" src="/views/changeInvoice.js"></script>
+</html>

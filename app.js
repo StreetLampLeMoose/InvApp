@@ -1,5 +1,6 @@
 const express = require ('express');
 const mongoose = require('mongoose');
+mongoose.set('debug',true);
 const path = require('path');
 const cors = require('cors');
 const app = express();
@@ -7,10 +8,11 @@ const bodyParser = require('body-parser');
 const signInRoute = require('./routes/signInRoute');
 const registrationRoute = require('./routes/registrationRoute');
 const newInvoiceRoute = require("./routes/newInvoiceRoute");
+const changeInvoiceRoute = require("./routes/changeInvoiceRoute");
 //const searchInvoicesRoute = require("./routes/searchInvoicesRoute");
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-const uri = "mongodb+srv://testUser2:2R1f1r8QuBbJcYqO@cluster0.ehflqbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://testUser2:ZgEw4nOnrYvsRwg0@cluster0.ehflqbf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0&tls=true";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -20,6 +22,8 @@ const client = new MongoClient(uri, {
         deprecationErrors: true,
         
     },
+    tls:true,
+    tlsAllowInvalidCertificates:false,
 });
 
 async function run() {
@@ -28,7 +32,9 @@ async function run() {
         await client.connect();
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
-        console.log("Pinged your deployment. You successfully connected to MongoDB!");
+        console.log("Pinged your deployment. You successfully connected to MongoDB!");}
+    catch(err) {
+        console.error("Error connecting to MongoDB:", err);
     } finally {
         // Ensures that the client will close when you finish/error
         await client.close();
@@ -41,6 +47,7 @@ app.use(cors({
     credentials: true
 }));
 exports.app = app;
+console.log("app is about to start listening on port 3000");
 const port = 3000;
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(bodyParser.json());
@@ -92,10 +99,14 @@ app.get('/views/searchInvoices', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'searchInvoices.js'));
 });*/                  
 
+app.get('/views/changeInvoice',(req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'changeInvoice.js'));
+});
+//app.use(searchInvoicesRoute);
 app.use(signInRoute);
 app.use(registrationRoute);
 app.use(newInvoiceRoute);
-//app.use(searchInvoicesRoute);
+app.use(changeInvoiceRoute);
 
 
 app.listen(port, () => {
