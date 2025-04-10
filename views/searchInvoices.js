@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     let searchInvoicesForm = document.getElementById("searchInvoicesForm");
     let invoiceTable = document.getElementById("invoiceTable")
+    let homeButton = document.getElementById("home");
+    homeButton.addEventListener('click', () => {
+        window.location.href = "/views/index"
+    })
     searchInvoicesForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         let invoiceId = document.getElementById("invoiceId").value

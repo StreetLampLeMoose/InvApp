@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded',() => {
     let newInvoiceForm = document.getElementById("newInvoiceForm");
 
+    let homeButton = document.getElementById("home");
+    homeButton.addEventListener('click', () => {
+        window.location.href = "/views/index"
+    })
+
     newInvoiceForm.addEventListener('submit', async function (event) {
         event.preventDefault();
         let invoiceTitle = document.getElementById('invoiceTitle').value;

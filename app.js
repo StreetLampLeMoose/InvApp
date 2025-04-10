@@ -49,7 +49,7 @@ app.use(cors({
 exports.app = app;
 console.log("app is about to start listening on port 3000");
 const port = 3000;
-app.use(express.static(path.join(__dirname, 'views')));
+app.use('/views', express.static(path.join(__dirname, 'views')));
 app.use(bodyParser.json());
 //app.use(cors);
 app.use((req, res, next) => {
@@ -100,8 +100,13 @@ app.get('/views/searchInvoices', (req, res) => {
 });*/                  
 
 app.get('/views/changeInvoice',(req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'changeInvoice.html'));
+});
+
+app.get('/views/changeInvoice',(req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'changeInvoice.js'));
 });
+
 //app.use(searchInvoicesRoute);
 app.use(signInRoute);
 app.use(registrationRoute);

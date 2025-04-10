@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("client side content loaded")
     const signInButton = document.getElementById('signInButton');
+    let homeButton = document.getElementById("home");
+    homeButton.addEventListener('click', () => {
+        window.location.href = "/views/index"
+    })
     
     signInButton.addEventListener('click', async () => {
         console.log("sign in button clicked")

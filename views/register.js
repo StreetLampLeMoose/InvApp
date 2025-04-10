@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = document.getElementById("username");
     const password = document.getElementById("password");
     const company = document.getElementById("company");
+    let homeButton = document.getElementById("home");
+    homeButton.addEventListener('click', () => {
+        window.location.href = "/views/index"
+    })
     registerButton.addEventListener('click', async function (event) {
         event.preventDefault();
         console.log("in registration button handler")
